@@ -2,31 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags to set up basic page functionality and compatibility -->
+    <meta charset="UTF-8"> <!--character encoding -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Makes website compatible with IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive -->
+
+    <!-- Page title -->
     <title>Personal Portfolio Website</title>
+
+    <!-- Link to CSS file for styling -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome CDN for icons -->
+
+    <!-- CDN so icons can be added -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-
     <!-- Header Section -->
     <div id="header">
         <div class="container">
+            <!-- Setting up the navigation bar -->
             <nav>
                 <ul id="sidemenu">
+
+                    <!-- Setting up links to each section for the nav bar -->
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
+
+                    <!-- Close menu icon -->
                     <i class="fas fa-times" onclick="closeMenu()" aria-label="Close menu"></i>
                 </ul>
+                <!-- Open menu icon (mobile view) -->
                 <i class="fas fa-bars" onclick="openMenu()" aria-label="Open menu"></i>
             </nav>
+
+            <!-- Text for the header section -->
             <div class="header-text">
                 <p>Music Producer - DJ - Film Score Writer</p>
                 <h1><span>TH.STE</span></h1>
@@ -38,17 +51,26 @@
     <div id="about">
         <div class="container">
             <div class="row">
+                <!-- Add image of Artist as a profile image -->
                 <div class="about-col-1">
                     <img src="images/thste.jpg" alt="Profile Image">
                 </div>
+
+                <!-- Write a bio about the individual -->
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I am an Irish music producer and score writer based between London and Ireland. I specialize in electronic music production and film scoring, with experience in live sound engineering and studio recording.I am an Irish music producer and score writer based between London and Ireland. I studied music production in Pulse College Dublin, where I had access to the facilities at Windmill Lane Studios. I specialize in electronic music production and film scoring. After leaving college, I have produced multiple electronic tracks and scored a short film called "Mira Talks." Additionally, I am experienced in recording and mixing live instruments and vocals. I also have 4 years of experience working with live sound on events, including festivals like Glastonbury and Forbidden Fruit.</p>
+                    <p>
+                       I am an Irish music producer and score writer based between London and Ireland. I specialize in electronic music production and film scoring, with experience in live sound engineering and studio recording.I am an Irish music producer and score writer based between London and Ireland. I studied music production in Pulse College Dublin, where I had access to the facilities at Windmill Lane Studios. I specialize in electronic music production and film scoring. After leaving college, I have produced multiple electronic tracks and scored a short film called "Mira Talks." Additionally, I am experienced in recording and mixing live instruments and vocals. I also have 4 years of experience working with live sound on events, including festivals like Glastonbury and Forbidden Fruit.
+                    </p>
+                    
+                    <!-- Creating tabs  -->
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('skills', event)">Skills</p>
                         <p class="tab-links" onclick="openTab('experience', event)">Experience</p>
                         <p class="tab-links" onclick="openTab('education', event)">Education</p>
                     </div>
+
+                    <!-- Creating content for the Skills tab -->
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Sound Engineering:</span> Providing live sound for events</li>
@@ -57,6 +79,8 @@
                             <li><span>Film Scoring:</span> Scoring short films and feature films</li>
                         </ul>
                     </div>
+
+                    <!-- Creating content for the Experience tab -->
                     <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>2023 - Present:</span> Freelance Event Worker</li>
@@ -64,6 +88,7 @@
                             <li><span>2018 - 2019:</span> Sound Engineer at Acoustik</li>
                         </ul>
                     </div>
+                    <!-- Creating content for the Education tab -->
                     <div class="tab-contents" id="education">
                         <ul>
                             <li><span>2016:</span> B.A. in Music Production, Griffith College Dublin</li>
@@ -79,6 +104,8 @@
         <div class="container">
             <h1 class="sub-title">My Services</h1>
             <div class="services-list">
+
+                <!-- Creating blocks. These describe the services the individual provides -->
                 <div>
                     <i class="fas fa-music"></i>
                     <h2>Music Production</h2>
@@ -106,26 +133,31 @@
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
+
+                <!-- Portfolio items -->
+                <!-- An image is related to each section -->
                 <div class="work">
-                    <img src="images/Eilishpic.jpg" alt="House Music">
+                    <img src="images/Eilishpic.jpg" alt="House Music">  <!-- Add a related image -->
                     <div class="layer">
                         <h3>House Music Tracks</h3>
                         <p>Click to visit my Soundcloud page for downloadable house music.</p>
-                        <a href="https://soundcloud.com/horseman2" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://soundcloud.com/horseman2" target="_blank"><i class="fas fa-external-link-alt"></i></a>  <!-- Add link to SoundCloud-->
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/Jaxson.png" alt="Acoustic Production">
+                    <img src="images/Jaxson.png" alt="Acoustic Production"> <!-- Add a related image -->
                     <div class="layer">
                         <h3>Acoustic Engineering and Production Work</h3>
                         <p>Click to watch a project I worked on for Jaxson as an engineer and producer.</p>
-                        <a href="https://www.youtube.com/watch?v=ZmXw7pQXCvA&t=21s" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.youtube.com/watch?v=ZmXw7pQXCvA&t=21s" target="_blank"><i class="fas fa-external-link-alt"></i></a> <!-- Add link to YouTube -->
                     </div>
                 </div>
+                <!-- Video portfolio item -->
                 <div class="work">
-                    <video src="images/MiraTalksCredits.mp4" controls></video>
+                    <video src="images/MiraTalksCredits.mp4" controls></video> <!-- Embed Video in Website -->
                 </div>
             </div>
+            <!-- Ceating link back to navigation links with a "See more button" -->
             <a href="#" class="btn">See more</a>
         </div>
     </div>
@@ -134,36 +166,59 @@
     <div id="contact">
         <div class="container">
             <div class="row">
+
+                <!-- Contact information -->
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fas fa-paper-plane"></i> slyne234@gmail.com</p>
                     <p><i class="fas fa-phone-square-alt"></i> +353879527470</p>
+
+                    <!-- Links to Social Media -->
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter-square"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/stephen.lyne.12"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/slyne234?s=11"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/th_ste62/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/stephen-lyne-a07414193/"><i class="fab fa-linkedin"></i></a>
                     </div>
+
+                    <!-- Download CV button -->
                     <a href="images/StephenLyneCV.docx" download class="btn btn2">Download CV</a>
                 </div>
+
+                <!-- Creating the Contact form -->
+                
                 <div class="contact-right">
+
+                    <!-- Container for the contact form -->                   
+                    <!-- Form setup with an ID, action URL, and POST method -->
                     <form id="my-form" action="https://formspree.io/f/xanyjlye" method="POST">
+                       
                         <label>Email:</label>
                         <input type="email" name="email" required />
+
+                         <!-- Label for the message field -->
                         <label>Message:</label>
+
+                        <!-- Textarea for message input, required field -->
                         <textarea name="message" required></textarea>
+
+                       <!-- Submit button with additional classes for styling -->
                         <button id="my-form-button" class="btn btn2">Submit</button>
+
+                         <!-- Placeholder paragraph for displaying form submission status -->
                         <p id="my-form-status"></p>
                     </form>
                 </div>
-            </div>
+                
         </div>
+
+        <!-- Footer -->
         <div class="copyright">
             <p>Copyright © Stephen.</p>
         </div>
     </div>
 
-    <!-- JavaScript Section -->
+    <!-- Link to JavaScript File -->
     <script src="script.js"></script>
 </body>
 
