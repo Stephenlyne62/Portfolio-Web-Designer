@@ -1,75 +1,115 @@
 /* General Reset and Basic Styling */
 * {
-    margin: 0; 
-    padding: 0; 
-    font-family: 'Poppins', sans-serif; /* Set default font */
-    box-sizing: border-box; /* Ensure padding and border are included in element's dimensions. */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /*Smooth scrolling between sections improves usability */
+    scroll-behavior: smooth;
 }
 
-/*Set background and text colour*/ 
+/* Set background and text color */
 body {
-    background: rgb(255, 183, 218); 
-    color: rgb(206, 64, 130); }
+    background: rgb(245, 180, 180);
+    color: rgb(246, 255, 194);
+}
 
-/* Set width and height and background of header Section */
+/* Set width and height and background of header section */
 #header {
-    width: 100%; 
-    height: 100vh; 
-    background-image: url(images/glitchforest.jpg); 
-    background-size: cover; 
-    background-position: right center; 
-    background-attachment: fixed; /* Fixed background when scrolling */
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/computerSS.jpg);
+    background-size: cover;
+    background-position: right center;
+    background-attachment: fixed;
 }
 
-/* Centralize content*/
+/* Centralize content */
 .container {
-    padding: 10px 10%; 
+    padding: 10px 10%;
 }
 
-/* Centralize, space out and wrap items in the navigation bar */
+/* Navigation Styling */
 nav {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    flex-wrap: wrap; /* Allows items to easily fit smaller screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.logo {
-    width: 140px; /* Set logo size */
+nav ul {
+    background: #f490af;
+    position: fixed;
+    top: 0;
+    right: -200px; /* Initially off-screen */
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2; /* Keep it above other content */
+    transition: right 0.5s ease-in-out; /* Smooth slide transition */
 }
 
-/* Add margin spacing, remove bullets and ensure items appear in a row */
 nav ul li {
-    display: inline-block; 
-    list-style: none; 
-    margin: 10px 20px; 
+    display: block;
+    margin: 25px;
 }
 
-/* Add colour to nav links, remove underline and create a hover effect*/
 nav ul li a {
-    color: rgb(239, 54, 143); 
-    text-decoration: none; 
-    font-size: 33px; /* Link font size */
-    position: relative; 
+    color: rgb(246, 255, 194);
+    text-decoration: none;
+    font-size: 33px;
 }
 
-nav ul li a::after {
-    content: ''; /* Set underline effect */
-    width: 0; 
-    height: 3px; 
-    background: #f7cfeb; /* Set background color */
+nav ul .fas {
     position: absolute;
-    left: 0;
-    bottom: -6px; /* Sets the space below text */
-    transition: 0.5s; /* Smooth animation between transitions */
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(246, 255, 194);
 }
 
-nav ul li a:hover::after {
-    width: 100%; /* Width of underline */
+/* Styles for the hamburger and close icons */
+nav .fas {
+    display: block;
+    font-size: 30px;
+    color: rgb(246, 255, 194);
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for small screens */
+@media only screen and (max-width: 600px) {
+    nav .fas {
+        font-size: 30px; /* Larger icon on small screens */
+    }
+    
+    /* Full-screen view for the side menu on mobile */
+    nav ul {
+        right: -200px; /* Initially hidden off-screen */
+        width: 250px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+        font-size: 25px;
+    }
+
+    /* Make menu items bigger and space them out */
+    nav ul li a {
+        font-size: 25px;
+        margin: 10px 0;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
 }
 
 /* Header Text */
@@ -84,13 +124,13 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-    color: rgb(239, 54, 143); /* Set header text colour */
+    color: rgb(246, 255, 194); /* Set header text colour */
 }
 
 /* About Section */
 #about {
     padding: 80px 0; /* Set appropriate padding  */
-    color: rgba(3, 20, 23, 0.593); /* Set colour of text */
+    color: rgb(246, 255, 194); /* Set colour of text */
 }
 
 /* Adjust alignment and spacing */
@@ -223,22 +263,29 @@ nav ul li a:hover::after {
 /* Portfolio Section */
 
 #portfolio {
-    padding: 50px 0; /* Vertical spacing */
+    padding: 20px 0; /* Vertical spacing */
 }
 /* Adds a grid layout and spacing */
 .work-list {
-    display: grid; /* Grid layout for portfolio items */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns are added to improve readability and usability */
-    grid-gap: 40px; 
-    margin-top: 50px; 
+    display: flex;
+    justify-content: flex-start; /* Center items horizontally */
+    align-items: flex-start; /* Center items vertically */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .work {
-    border-radius: 10px; /* Rounded corners to improve aesthetic */
-    position: relative; /* Ensures correct allignment */
-    overflow: hidden; /* Hide overflow, creates a consistently clean design */
-    height: 300px; /* Ensures items height match each other */
+    display: flex;
+    justify-content: flex-start; /* Center the image inside the work container */
+    align-items: flex-start;
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 300px; /* Ensure a fixed width for better centering */
 }
+
 
 .work img {
     width: 100%; 
@@ -270,24 +317,27 @@ nav ul li a:hover::after {
     z-index: 10; /* Ensures visibility */
 }
 /* -------portfolio----------- */
-#portfolio{
-    padding: 50px 0;
+/* Portfolio Section */
+#portfolio {
+    padding: 30px 0; /* Reduced vertical spacing */
+    margin-bottom: 20px; /* Reduced gap between portfolio and contact */
 }
 
-/* Adds a grid layout and spacing */
-.work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
+/* Section Titles */
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #491111;
+    margin-bottom: 10px; /* Reduced space below title */
 }
 
-.work {
-    border-radius: 10px; /* Rounded corners to improve aesthetic */
-    position: relative; /* Ensures correct allignment */
-    overflow: hidden; /* Hide overflow, creates a consistently clean design */
-    height: 300px; /* Ensures items height match each other */
+/* Adjust spacing between work items */
+.work-list {
+    margin-top: 50px; /* Reduced space above portfolio items */
+    margin-bottom: 50px; /* Reduced space below portfolio items */
 }
+
+
 
 .work img {
     width: 100%; 
@@ -348,104 +398,136 @@ nav ul li a:hover::after {
 
 /* ---------contact-------- */
 
-/* Left side takes 35% of the row width, right side takes 60% */
-/* Add spacing above paragraph */
+/* Adjust container alignment and ensure the section aligns to the right */
+.contact {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: flex-start; /* Maintain vertical alignment */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 0; /* Remove unnecessary padding */
+}
+
+/* Adjust column widths for proper alignment */
 .contact-left {
-    flex-basis: 35%; 
+    flex-basis: 15%; /* Maintain column width */
+    text-align: left; /* Align text to the right */
 }
 
 .contact-right {
-    flex-basis: 60%; 
+    flex-basis: 50%; /* Maintain column width */
+    text-align: right; /* Align text to the right */
 }
 
+/* Add spacing and styling for paragraph and icons */
 .contact-left p {
-    margin-top: 30px; 
+    margin-top: 30px; /* Add spacing above paragraph */
 }
 
-/* Styling added with regards to spacing, colouring and sizing for aesthetic */
 .contact-left p i {
     color: #ff004f;
-    margin-right: 15px; 
-    font-size: 25px; 
+    font-size: 25px;
 }
 
+/* Social icons styling */
 .social-icons {
-    margin-top: 30px; 
+    margin-top: 30px;
 }
 
-/* Add styling regarding icon size, spacing, colouring and alignment */
 .social-icons a {
     text-decoration: none; /* Remove underline from icons */
-    font-size: 30px; 
-    margin-right: 15px; 
-    color: #ababab; 
-    display: inline-block; 
-    transition: transform 0.5s; /* Smooth transition to avoid an abrupt change */
+    font-size: 30px;
+    margin-right: 10px; /* Add spacing between icons */
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s, color 0.5s; /* Smooth transition for hover effects */
 }
 
-/* Causes an upward movement and colour change on hover. */
-/* This informs the user that these elements are interactive  */
 .social-icons a:hover {
-    color: #ff004f; 
-    transform: translateY(-5px); 
+    color: #ff004f; /* Change color on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
 }
 
-.btn.btn2 {
-    display: inline-block; /* For smaller screens make button inline so that they flow with the text */
-    background: #ff004f; 
-}
-
+/* Contact form adjustments */
 .contact-right form {
-    width: 100%; 
+    width: 100%;
 }
 
-/* Styling added to remove borders and outline. */
-/* Colouring, font and spacing styling is also added */
+/* Form input and textarea styling */
 form input,
 form textarea {
     width: 100%;
-    border: 0; 
-    outline: none; 
-    background: #262626; 
-    padding: 15px; 
-    margin: 15px 0; 
-    color: #b6adad; 
-    font-size: 18px; 
-    border-radius: 6px; 
-}
-
-
-form .btn2 {
-    padding: 14px 60px; /* Sets appropriate padding */
-    font-size: 18px; /* Set button text size */
-    margin-top: 20px; 
-    cursor: pointer; /* Pointer set to cursor */
-}
-
-.copyright{
-    width: 100%;
-    text-align: center;
-    padding: 25px 0;
+    border: 0;
+    outline: none;
     background: #262626;
-    font-weight: 300;
-    margin-top: 20px;
-}
-.copyright i{
-    color: #ff004f;
-}
-.copyright a{
-    color: #ff004f;
-    text-decoration: none;
-}
-/* -----------------css for small screens--------- */
-nav .fas{
-    display: none;
+    padding: 15px;
+    margin: 15px 0;
+    color: #b6adad;
+    font-size: 18px;
+    border-radius: 6px;
 }
 
-/* Background Image */
-@media only screen and (max-width: 600px){
+/* Form button styling */
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #ff004f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: background 0.5s;
+}
+
+form .btn2:hover {
+    background: #e60046;
+}
+
+/* Responsive adjustments for small screens */
+@media only screen and (max-width: 600px) {
+
+    @media only screen and (max-width: 600px) {
+        nav .fas {
+            font-size: 30px; /* Larger icon on small screens */
+        }
+        
+        /* Full-screen view for the side menu on mobile */
+        nav ul {
+            right: -200px; /* Initially hidden off-screen */
+            width: 250px;
+        }
+    
+        nav ul li {
+            display: block;
+            margin: 25px;
+            font-size: 25px;
+        }
+    
+        /* Make menu items bigger and space them out */
+        nav ul li a {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+    
+        .header-text h1 {
+            font-size: 30px;
+        }
+
+    .contact {
+        justify-content: center; /* Center align content for smaller screens */
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%; /* Take full width */
+        text-align: center; /* Center align text for smaller screens */
+    }
+
+    .social-icons a {
+        margin-right: 15px; /* Increase spacing for readability */
+    }
     #header{
-        background-image: url(images/glitchforest.jpg);
+        background-image: url(images/computerSS.jpg);
     }
  
     .header-text{
@@ -457,10 +539,16 @@ nav .fas{
         font-size: 30px;
     }
 
-    nav .fas{
-        display: block;
-        font-size: 25px;
-    }
+        nav .fas {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: none; /* Default hidden unless media query is triggered */
+            font-size: 25px;
+            cursor: pointer;
+            z-index: 3; /* Ensures it's above other elements */
+        }
+        
 
     nav ul{
         background: #f490af;
@@ -493,7 +581,7 @@ nav .fas{
         flex-basis: 100%;
     }
     .about-col-1{
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
     .about-col-2{
         font-size: 14px;
@@ -508,4 +596,5 @@ nav .fas{
     .copyright{
         font-size: 14px;
     }
+}
 }
